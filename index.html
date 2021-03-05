@@ -5,23 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
+    <!-- Heading information found at the top -->
     <header>
 
-        <h1>View Highscores</h1>
+        <a href="./highscores.html">View Highscores</a>
         <h1 id="timer">Time: 0</h1>
 
     </header>
 
+    <!-- Container holding all the changing panels -->
     <section class="main-container">
-
+        <!-- Container holding the start button and info -->
         <article id="start-container">
 
-            <button id="start-button">Start</button>
+            <h2>Video Game Quiz Challenge</h2>
+            <h1>Try to answer the following video game-related questions within the time
+                limit. Keep in mind that incorrect answers will penalize your score/time
+                by ten seconds!
+            </h1>
+            <button id="start-button">Start Quiz</button>
 
         </article>
+        <!-- Container holding the actual questions being cycled -->
         <article id="question-holder">
 
             <h2 id="question-text">Bobby Died?</h2>
@@ -29,8 +37,22 @@
             <button id="answer2" class="answers">Answer2</button>
             <button id="answer3" class="answers">Answer3</button>
             <button id="answer4" class="answers">Answer4</button>
-            <h3 id="check-answer">Right/Wrong</h3>
+            <h3 id="check-answer"></h3>
 
+        </article>
+
+        <!-- Page displayed after the quiz is over -->
+        <article id="quiz-over">
+
+            <h2>All Done!</h2>
+            <h2 id="final-score">Your Final Score is 0</h2>
+            <form action="submit">
+
+                <h3>Enter Initials </h3>
+                <input type="text" id="initials-input">
+                <button id="submit-button">Submit</button>
+
+            </form>
         </article>
     </section>
 </body>
