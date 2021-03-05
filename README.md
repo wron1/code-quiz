@@ -16,16 +16,16 @@ Link to the finished webpage hosted on Git: https://wron1.github.io/code-refacto
 ## Usage
 
 This is the main page, click start to begin the quiz.
-![Screenshot 1](assets/images/screenshot1.PNG?raw=true)
+![Screenshot 1](assets/img/screenshot1.PNG?raw=true)
 
 The questions are multiple choice and you will see an indicator at the bottom to let you know whether your prior answer was Correct or Wrong.
-![Screenshot 2](assets/images/screenshot2.PNG?raw=true)
+![Screenshot 2](assets/img/screenshot2.PNG?raw=true)
 
 Once you are finished input your initials and click submit to save your score.
-![Screenshot 3](assets/images/screenshot3.PNG?raw=true)
+![Screenshot 3](assets/img/screenshot3.PNG?raw=true)
 
 Click on the "View Highscores" hyperlink to see all of the scores you currently have.
-![Screenshot 4](assets/images/screenshot4.PNG?raw=true)
+![Screenshot 4](assets/img/screenshot4.PNG?raw=true)
 
 
 ## License
