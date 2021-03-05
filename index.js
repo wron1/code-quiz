@@ -53,9 +53,9 @@ var questionArray = [
         answer: "bad"
     },
     {
-        question: "This is Question 6?",
-        choices: ["1. Correct", "2. Wrong", "3. Wrong", "4. Wrong"],
-        answer: "1. Correct"
+        question: "Is this question Six?",
+        choices: ["1. Yes it is", "2. No it is not", "3. This is question five", "4. This is question seven"],
+        answer: "1. Yes it is"
     }
 
 ]
@@ -74,6 +74,7 @@ var currentScore = 0;
 // Time Elements
 var timeLeft = 60;
 theTimer.innerHTML = ("Time: "+ timeLeft);
+var wrongAnswer;
 
 function setTime(){
 
@@ -88,17 +89,24 @@ function setTime(){
 
         if(timeLeft === 0){
 
-            clearInterval(timerInterval);
-            finalScore.textContent = ("Your Final Score is "+ currentScore);
+            currentScore += timeLeft;
             timeLeft = 0;
             currentScore -= 20;
+            finalScore.textContent = ("Your Final Score is "+ currentScore);
+            clearInterval(timerInterval);
             endGame();
 
         }
         if(endScreen.style.display === "flex"){
-
-            clearInterval(timerInterval);
+            
             currentScore += timeLeft;
+            clearInterval(timerInterval);
+
+        }
+
+        if(wrongAnswer){
+
+
 
         }
     }, 1000)
@@ -135,8 +143,9 @@ function answerWrong(){
 
     if(currentScore >= 10){
 
-        currentScore -= 10
-
+        currentScore -= 10;
+        timeLeft -= 10;
+        wrongAnswer = false;    
     }
 }
 
