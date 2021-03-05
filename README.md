@@ -10,7 +10,7 @@ Scores are stored locally and are found in the highscores page located seperatel
 
 Hope you enjoy!
 
-Link to the finished webpage hosted on Git: https://wron1.github.io/code-refactor/
+Link to the finished webpage hosted on Git: https://wron1.github.io/code-quiz/
 
 
 ## Usage
