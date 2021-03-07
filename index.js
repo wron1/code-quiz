@@ -75,6 +75,7 @@ var currentScore = 0;
 var timeLeft = 60;
 theTimer.innerHTML = ("Time: "+ timeLeft);
 var wrongAnswer;
+var lostTime = 0;
 
 function setTime(){
 
@@ -87,26 +88,49 @@ function setTime(){
         timeLeft--;
         theTimer.innerHTML = ("Time: "+ timeLeft);
 
+        // Check if the time has reached zero to end the game
         if(timeLeft === 0){
 
             currentScore += timeLeft;
             timeLeft = 0;
-            currentScore -= 20;
             finalScore.textContent = ("Your Final Score is "+ currentScore);
             clearInterval(timerInterval);
             endGame();
 
         }
+
+        // Check if when the time equals zero there are enough points to take away 10 more, else set the score to 0
+        if(timeLeft === 0 && currentScore >= 10){
+
+            currentScore -= 10;
+
+        }else if(timeLeft === 0 && currentScore <= 10){
+
+            currentScore = 0;
+
+        }
+
+        // Check to see if the player finished the game with time left 
         if(endScreen.style.display === "flex"){
             
+            console.log("Current score: "+currentScore+" plus Time Left: "+timeLeft+" equals: "+(currentScore+timeLeft))
             currentScore += timeLeft;
+            console.log("The amount of time you had left is "+timeLeft)
+            finalScore.textContent = ("Your Final Score is "+ currentScore);
             clearInterval(timerInterval);
 
         }
 
+        // Wrong answer function interacting with the timer function
         if(wrongAnswer){
 
+            console.log("This is the wrong answer function running. Current state of wrongAnswer = "+wrongAnswer)
+            if(timeLeft > 10){
 
+                timeLeft -= 10;
+
+            }
+            wrongAnswer = false;
 
         }
     }, 1000)
@@ -122,10 +146,6 @@ function quizEnd(){
         theQuestionBox.style.display = "none";
         endScreen.style.display = "flex";
         
-        // Post the final score
-        currentScore += timeLeft;
-        finalScore.textContent = ("Your Final Score is "+ currentScore);
-
     }else{
 
         QuizThing();
@@ -137,16 +157,26 @@ function quizEnd(){
 function answerRight(){
 
         currentScore += 25
+        console.log("Current Score is "+currentScore)
 
 }
 function answerWrong(){
 
+    console.log("hi")
+
     if(currentScore >= 10){
 
         currentScore -= 10;
-        timeLeft -= 10;
-        wrongAnswer = false;    
+        console.log("Current Score is "+currentScore)
+
+    }else{
+
+        currentScore = 0;
+
     }
+
+    wrongAnswer = true;
+
 }
 
 // Handles the timeout function bringing you to the end screen
